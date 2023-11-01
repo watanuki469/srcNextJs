@@ -1,8 +1,11 @@
-
+//test
+'use client'
 import Link from 'next/link'
-import x from '@/styles/app.module.css'
-import y from '@/styles/app2.module.css'
+import { increment, decrement, incrementByAmount } from './redux/Features/counter/counterLSlice'
+import { useSelector, useDispatch } from 'react-redux'
 import { Metadata } from 'next'
+import { RootState } from './redux/store'
+import styles from './page.module.css'
 
 export const metadata: Metadata = {
   title: 'home page',
@@ -10,19 +13,37 @@ export const metadata: Metadata = {
 }
 //get api
 export default function Home() {
- 
+  const count = useSelector((state: RootState) => state.counter.value)
+  const dispatch = useDispatch();
   return (
     <div>
       <ul>
-        <li className={x['red']}>
-          <Link href={"/facebook"}>  <span className={y['red']}> Facebook </span> </Link>
+        <li>
+          <Link href={"/facebook"}>  <span> Facebook </span> </Link>
         </li>
         <li>
-          <a href=""></a>
+          <button
+            className={styles.button}
+            onClick={() => dispatch(increment())}
+          >Increment</button>
         </li>
         <li>
-          <a href=""></a>
+          <span>{count}</span>
         </li>
+        <li>
+          <button
+            className={styles.button}
+            onClick={() => dispatch(decrement())}
+          >Decrement</button>
+        </li>
+        <li>
+          <button
+            className={styles.button}
+            onClick={() => dispatch(incrementByAmount(2))}
+          >Reset</button>
+        </li>
+
+
       </ul>
 
     </div>

@@ -19,7 +19,6 @@ const BlogsPage = () => {
         }
         return (
             <div className='mt3'>
-
                 <AppTable blogs={data?.sort((a: any, b: any) => b.id - a.id)??[]}></AppTable>
             </div>
         )
