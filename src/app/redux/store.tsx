@@ -1,7 +1,7 @@
 'use client';
 
 import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from './Features/counter/counterLSlice';
+import counterReducer from './slice';
 
 export const store = configureStore({
     reducer: {

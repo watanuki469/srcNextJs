@@ -1,7 +1,6 @@
-//test
 'use client'
 import Link from 'next/link'
-import { increment, decrement, incrementByAmount } from './redux/Features/counter/counterLSlice'
+import { increment, decrement, incrementByAmount } from './redux/slice'
 import { useSelector, useDispatch } from 'react-redux'
 import { Metadata } from 'next'
 import { RootState } from './redux/store'
@@ -42,7 +41,6 @@ export default function Home() {
             onClick={() => dispatch(incrementByAmount(2))}
           >Reset</button>
         </li>
-
 
       </ul>
 
