@@ -8,7 +8,6 @@ import { Container } from 'react-bootstrap'
 const inter = Inter({ subsets: ['latin'] })
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { Providers } from './redux/provider'
 
 
 
@@ -27,9 +26,9 @@ export default function RootLayout({
       <body className={inter.className}>
         <AppHeader></AppHeader>
         <Container style={{ minHeight: 'calc(100vh-106px' }}>
-        <Providers>
+        
           {children}
-          </Providers>
+          
         </Container>
         <AppFooter></AppFooter>
         <ToastContainer
